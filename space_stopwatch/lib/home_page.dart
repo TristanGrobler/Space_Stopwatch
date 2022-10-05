@@ -42,96 +42,106 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height / 2,
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: CarouselSlider(
-                        items: Constants.widgets(),
-                        carouselController: tenMinCarouselController,
-                        options: CarouselOptions(
-                          aspectRatio: 9 / 16,
-                          viewportFraction: 1,
-                          initialPage: 0,
-                          enableInfiniteScroll: true,
-                          reverse: false,
-                          autoPlay: autoPlay,
-                          autoPlayInterval: Duration(seconds: 600),
-                          autoPlayAnimationDuration:
-                              Duration(milliseconds: 1200),
-                          autoPlayCurve: Curves.fastOutSlowIn,
-                          enlargeCenterPage: true,
-                          scrollDirection: Axis.vertical,
+              child: Stack(
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 2,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: CarouselSlider(
+                            items: Constants.widgets(),
+                            carouselController: tenMinCarouselController,
+                            options: CarouselOptions(
+                              aspectRatio: 9 / 16,
+                              viewportFraction: 1,
+                              initialPage: 0,
+                              enableInfiniteScroll: true,
+                              reverse: false,
+                              autoPlay: autoPlay,
+                              autoPlayInterval: Duration(seconds: 600),
+                              autoPlayAnimationDuration:
+                                  Duration(milliseconds: 1200),
+                              autoPlayCurve: Curves.fastOutSlowIn,
+                              enlargeCenterPage: true,
+                              scrollDirection: Axis.vertical,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                    Expanded(
-                      child: CarouselSlider(
-                        items: Constants.widgets(),
-                        carouselController: minCarouselController,
-                        options: CarouselOptions(
-                          aspectRatio: 9 / 16,
-                          viewportFraction: 1,
-                          initialPage: 0,
-                          enableInfiniteScroll: true,
-                          reverse: false,
-                          autoPlay: autoPlay,
-                          autoPlayInterval: Duration(seconds: 60),
-                          autoPlayAnimationDuration:
-                              Duration(milliseconds: 900),
-                          autoPlayCurve: Curves.fastOutSlowIn,
-                          enlargeCenterPage: true,
-                          scrollDirection: Axis.vertical,
+                        Expanded(
+                          child: CarouselSlider(
+                            items: Constants.widgets(),
+                            carouselController: minCarouselController,
+                            options: CarouselOptions(
+                              aspectRatio: 9 / 16,
+                              viewportFraction: 1,
+                              initialPage: 0,
+                              enableInfiniteScroll: true,
+                              reverse: false,
+                              autoPlay: autoPlay,
+                              autoPlayInterval: Duration(seconds: 60),
+                              autoPlayAnimationDuration:
+                                  Duration(milliseconds: 900),
+                              autoPlayCurve: Curves.fastOutSlowIn,
+                              enlargeCenterPage: true,
+                              scrollDirection: Axis.vertical,
+                            ),
+                          ),
                         ),
-                      ),
-                    ),
-                    Text(
-                      ':',
-                      style: TextStyle(fontSize: 50, color: Color(0xff570081)),
-                    ),
-                    Expanded(
-                      child: CarouselSlider(
-                        items: Constants.widgets(),
-                        carouselController: tenSecCarouselController,
-                        options: CarouselOptions(
-                          aspectRatio: 9 / 16,
-                          viewportFraction: 1,
-                          initialPage: 0,
-                          enableInfiniteScroll: true,
-                          reverse: false,
-                          autoPlay: autoPlay,
-                          autoPlayInterval: Duration(seconds: 10),
-                          autoPlayAnimationDuration:
-                              Duration(milliseconds: 600),
-                          autoPlayCurve: Curves.fastOutSlowIn,
-                          enlargeCenterPage: true,
-                          scrollDirection: Axis.vertical,
+                        Text(
+                          ':',
+                          style:
+                              TextStyle(fontSize: 50, color: Color(0xff570081)),
                         ),
-                      ),
-                    ),
-                    Expanded(
-                      child: CarouselSlider(
-                        items: Constants.widgets(),
-                        carouselController: secCarouselController,
-                        options: CarouselOptions(
-                          aspectRatio: 9 / 16,
-                          viewportFraction: 1,
-                          initialPage: 0,
-                          enableInfiniteScroll: true,
-                          reverse: false,
-                          autoPlay: autoPlay,
-                          autoPlayInterval: Duration(seconds: 1),
-                          autoPlayAnimationDuration:
-                              Duration(milliseconds: 300),
-                          autoPlayCurve: Curves.fastOutSlowIn,
-                          enlargeCenterPage: true,
-                          scrollDirection: Axis.vertical,
+                        Expanded(
+                          child: CarouselSlider(
+                            items: Constants.widgets(),
+                            carouselController: tenSecCarouselController,
+                            options: CarouselOptions(
+                              aspectRatio: 9 / 16,
+                              viewportFraction: 1,
+                              initialPage: 0,
+                              enableInfiniteScroll: true,
+                              reverse: false,
+                              autoPlay: autoPlay,
+                              autoPlayInterval: Duration(seconds: 10),
+                              autoPlayAnimationDuration:
+                                  Duration(milliseconds: 600),
+                              autoPlayCurve: Curves.fastOutSlowIn,
+                              enlargeCenterPage: true,
+                              scrollDirection: Axis.vertical,
+                            ),
+                          ),
                         ),
-                      ),
+                        Expanded(
+                          child: CarouselSlider(
+                            items: Constants.widgets(),
+                            carouselController: secCarouselController,
+                            options: CarouselOptions(
+                              aspectRatio: 9 / 16,
+                              viewportFraction: 1,
+                              initialPage: 0,
+                              enableInfiniteScroll: true,
+                              reverse: false,
+                              autoPlay: autoPlay,
+                              autoPlayInterval: Duration(seconds: 1),
+                              autoPlayAnimationDuration:
+                                  Duration(milliseconds: 300),
+                              autoPlayCurve: Curves.fastOutSlowIn,
+                              enlargeCenterPage: true,
+                              scrollDirection: Axis.vertical,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                  Container(
+                    color: Colors.transparent,
+                    height: MediaQuery.of(context).size.height / 2,
+                    width: double.infinity,
+                  )
+                ],
               ),
             ),
             Row(
